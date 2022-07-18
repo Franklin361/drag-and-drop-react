@@ -20,8 +20,8 @@ export const ContainerCards = ({ items = [], status, isDragging, setIsDragging, 
         card.status = status
 
         setListItems(prev => ([
-            ...prev.filter(item => item.id !== id),
-            card
+            card,
+            ...prev.filter(item => item.id !== id)
         ]))
 
         setIsDragging(false)

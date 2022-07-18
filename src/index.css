@@ -26,6 +26,7 @@ body {
 
 /* TITLE */
 .title {
+  text-align: center;
   padding: 2rem 0;
   gap: .5rem;
 }
@@ -52,8 +53,9 @@ body {
 }
 
 .layout-cards {
-  border: 2px solid rgba(255, 255, 255, 0.548);
+  border: 2px solid #ffffff8c;
   border-radius: 5px;
+  transition: all .3s linear;
 }
 
 .layout-cards>p {
@@ -65,8 +67,10 @@ body {
   text-transform: capitalize;
 }
 
+
 .layout-dragging {
-  background: #000;
+  background: #ffffff17;
+  border: 2px dashed #ffffff8c;
 }
 
 /* SINGLE CARD */
@@ -76,9 +80,39 @@ body {
   border-radius: 5px;
   padding: 1rem;
   cursor: pointer;
+  animation: fadeIn .3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
 }
 
 .card-container>p {
   font-weight: bold;
   font-size: 1.5rem;
+}
+
+
+@media screen and (max-width: 800px) {
+
+
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .layout-cards {
+    overflow-y: scroll;
+    height: 250px;
+    min-height: 150px;
+    max-height: 250px;
+  }
 }
