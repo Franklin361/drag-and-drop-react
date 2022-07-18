@@ -5,31 +5,20 @@ interface Props {
     items: Data[]
     status: Status
     isDragging: boolean
-    setIsDragging: React.Dispatch<React.SetStateAction<boolean>>
-    setListItems: React.Dispatch<React.SetStateAction<Data[]>>
+    handleUpdateList: (id: number, status: Status) => void
+    handleDragging: (dragging: boolean) => void
 }
 
-export const ContainerCards = ({ items = [], status, isDragging, setIsDragging, setListItems }: Props) => {
+export const ContainerCards = ({ items = [], status, isDragging, handleDragging, handleUpdateList }: Props) => {
 
     const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault()
-
-        const id = +e.dataTransfer.getData('card')
-
-        let card = items.find(item => item.id === id) as Data
-        card.status = status
-
-        setListItems(prev => ([
-            card,
-            ...prev.filter(item => item.id !== id)
-        ]))
-
-        setIsDragging(false)
+        handleUpdateList(+e.dataTransfer.getData('card'), status)
+        handleDragging(false)
     }
 
-    const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-        e.preventDefault()
-    }
+    const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => e.preventDefault()
+
     return (
         <div
             className={`layout-cards ${isDragging ? 'layout-dragging' : ''}`}
@@ -43,7 +32,7 @@ export const ContainerCards = ({ items = [], status, isDragging, setIsDragging, 
                     && <CardItem
                         data={item}
                         key={item.id}
-                        setIsDragging={setIsDragging}
+                        handleDragging={handleDragging}
                     />
                 ))
             }

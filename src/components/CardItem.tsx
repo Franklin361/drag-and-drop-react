@@ -2,18 +2,16 @@ import { Data } from "../interfaces"
 
 interface Props {
     data: Data,
-    setIsDragging: React.Dispatch<React.SetStateAction<boolean>>
+    handleDragging: (dragging: boolean) => void
 }
 
-export const CardItem = ({ data, setIsDragging }: Props) => {
+export const CardItem = ({ data, handleDragging }: Props) => {
 
     const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
         e.dataTransfer.setData('card', `${data.id}`)
-        setIsDragging(true)
+        handleDragging(true)
     }
-    const handleDragEnd = (e: React.DragEvent<HTMLDivElement>) => {
-        setIsDragging(false)
-    }
+    const handleDragEnd = () => handleDragging(false)
 
     return (
         <div
