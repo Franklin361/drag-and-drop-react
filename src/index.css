@@ -21,8 +21,7 @@ body {
 }
 
 .container-main {
-
-  min-height: 100vh;
+  min-height: 85vh;
 }
 
 /* TITLE */
@@ -49,7 +48,6 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   padding: 0 2rem;
-  height: 100%;
   width: 100%;
 }
 
@@ -67,7 +65,9 @@ body {
   text-transform: capitalize;
 }
 
-
+.layout-dragging {
+  background: #000;
+}
 
 /* SINGLE CARD */
 .card-container {
@@ -75,6 +75,7 @@ body {
   background-color: slateblue;
   border-radius: 5px;
   padding: 1rem;
+  cursor: pointer;
 }
 
 .card-container>p {
