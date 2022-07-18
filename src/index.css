@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -9,4 +11,73 @@ body {
   color: #f2f2f2;
   font-family: 'Montserrat', sans-serif;
   font-weight: normal;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-main {
+
+  min-height: 100vh;
+}
+
+/* TITLE */
+.title {
+  padding: 2rem 0;
+  gap: .5rem;
+}
+
+.title>h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+
+.title>span {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+
+/* LAYOUT CARDS */
+.grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 0 2rem;
+  height: 100%;
+  width: 100%;
+}
+
+.layout-cards {
+  border: 2px solid rgba(255, 255, 255, 0.548);
+  border-radius: 5px;
+}
+
+.layout-cards>p {
+  border-radius: 5px;
+  background-color: black;
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+
+
+/* SINGLE CARD */
+.card-container {
+  margin: 1rem 1rem 0 1rem;
+  background-color: slateblue;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.card-container>p {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
