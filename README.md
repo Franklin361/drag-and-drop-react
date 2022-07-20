@@ -53,6 +53,6 @@ This time, we are going to implement the functionality to do a Drag & Drop with 
 
 ### Here's the link to the tutorial in case you'd like to take a look at it! eyes 👀
 
-- 🇲🇽 🔗 
+- 🇲🇽 🔗 https://dev.to/franklin030601/creando-un-app-que-usa-drag-and-drop-con-react-sin-librerias--gm3
 
-- 🇺🇲 🔗 
+- 🇺🇲 🔗 https://dev.to/franklin030601/creating-an-app-using-drag-and-drop-with-react-without-libraries--5cg9
