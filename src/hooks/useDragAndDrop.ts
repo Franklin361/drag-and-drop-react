@@ -7,13 +7,13 @@ export const useDragAndDrop = (initialState: Data[]) => {
     const [listItems, setListItems] = useState<Data[]>(initialState)
 
     const handleUpdateList = (id: number, status: Status) => {
-        let card = listItems.find(item => item.id === id) as Data
+        let card = listItems.find(item => item.id === id)
 
-        if (card.status !== status) {
+        if (card && card.status !== status) {
             card.status = status
             if (Array.isArray(listItems)) {
                 setListItems(prev => ([
-                    card,
+                    card!,
                     ...prev.filter(item => item.id !== id)
                 ]))
             }
