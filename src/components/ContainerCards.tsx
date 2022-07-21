@@ -12,7 +12,7 @@ interface Props {
 export const ContainerCards = ({ items = [], status, isDragging, handleDragging, handleUpdateList }: Props) => {
 
     const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-        e.preventDefault()
+        e.preventDefault();
         handleUpdateList(+e.dataTransfer.getData('text'), status)
         handleDragging(false)
     }
