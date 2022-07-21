@@ -13,7 +13,7 @@ export const ContainerCards = ({ items = [], status, isDragging, handleDragging,
 
     const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault()
-        handleUpdateList(+e.dataTransfer.getData('card'), status)
+        handleUpdateList(+e.dataTransfer.getData('text'), status)
         handleDragging(false)
     }
 
